@@ -7,11 +7,8 @@ package Tema2;
 public class Locatie {
 
 	private String tara;
-	
 	private String localitate;
-	
 	private String strada;
-	
 	private String numar;
 	
 	public Locatie ()
@@ -31,9 +28,10 @@ public class Locatie {
 	}
 	
 	public void afisare() {
-		System.out.println("Locatia se afla in tara " + this.tara + " localitatea " + this.localitate
-							 + " strada " + this.strada + " numarul " + this.numar
-							);
+		System.out.println("Locatia se afla in tara: " + this.tara);
+		System.out.println("Localitatea: " + this.localitate);
+		System.out.println("Strada: " + this.strada);
+		System.out.println("Numarul: " + this.numar);
 	}
 	
 	public String getTara()
