@@ -26,6 +26,7 @@ public class Client extends Persoana{
 	}
 
 	public void plateste() {
+		this.comanda.marcheazaPlatita();
 	}
 	
 	public void primesteComanda(Comanda comanda) {
