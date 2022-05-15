@@ -15,6 +15,10 @@ public class Comanda {
 	private Client expeditor;
 	private Persoana destinatar;
 	private boolean platita;
+	
+	public Comanda() {
+		
+	}
 
 	public Comanda(int distanta, int greutate, int volum, int pret, Valuta valuta, boolean livrata, Client expeditor, Persoana destinatar, boolean platita) {
 		this.distanta = distanta;
@@ -46,6 +50,7 @@ public class Comanda {
 			System.out.println("Platita: DA");
 		else 
 			System.out.println("Platita: NU");
+		System.out.println("");
 	}
 	
 	public float calcularePret() {
@@ -83,8 +88,6 @@ public class Comanda {
 	public void marcheazaPlatita() {
 		this.platita = true;
 	}
-	
-
 	
 	public float calculareTaxe() {
 		switch(this.valuta) {

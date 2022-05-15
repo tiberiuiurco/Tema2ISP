@@ -19,7 +19,13 @@ public class Curier {
 	public void afisare() {
 		System.out.println("Nume: " + nume);
 		System.out.println("Comanda: ");
-		this.comanda.afisare();
+		if (this.comanda != null)
+			this.comanda.afisare();
+		if (disponibil)
+			System.out.println("Disponibil: DA");
+		else
+			System.out.println("Disponibil: NU");
+		System.out.println("");
 	}
 	
 	public void marcheazaLivrat() {

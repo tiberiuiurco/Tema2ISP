@@ -27,9 +27,11 @@ public class Persoana {
 
 	public void afisare() {
 
-		System.out.println("Nume: " + this.nume + " contact " + this.contact);
+		System.out.println("Nume: " + this.nume);
+		System.out.println("Contact: " + this.contact);
+		System.out.println("");
 		this.locatie.afisare();
-
+		System.out.println("");
 	}
 	
 	public Locatie transmiteLocatie()

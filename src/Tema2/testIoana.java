@@ -6,6 +6,7 @@ public class testIoana {
 	{
 		Locatie l1 = new Locatie("Bulgaria", "Ploiesti", "Bobilna", "85");
 		l1.afisare();
+		System.out.println("");
 		
 		Persoana p1 = new Persoana(l1,"Alex", "gmail");
 		p1.afisare();
@@ -19,6 +20,7 @@ public class testIoana {
 		curieri.add(new Curier("Georgeta Saru", c0, true));
 		curieri.add(new Curier("Fabian Andreescu", c0, true));
 		
-		
+		for (int i = 0; i < curieri.size(); i ++)
+			curieri.get(i).afisare();
 	}
 }

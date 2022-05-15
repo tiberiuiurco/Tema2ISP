@@ -32,6 +32,7 @@ public class Locatie {
 		System.out.println("Localitatea: " + this.localitate);
 		System.out.println("Strada: " + this.strada);
 		System.out.println("Numarul: " + this.numar);
+		System.out.println("");
 	}
 	
 	public String getTara()

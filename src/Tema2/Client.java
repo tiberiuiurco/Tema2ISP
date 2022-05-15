@@ -22,7 +22,9 @@ public class Client extends Persoana{
 		System.out.println("Comanda:");
 		comanda.afisare();
 		System.out.println("Date client: ");
+		System.out.println("");
 		super.afisare();
+		System.out.println("");
 	}
 
 	public void plateste() {

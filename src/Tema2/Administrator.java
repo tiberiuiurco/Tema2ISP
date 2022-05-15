@@ -19,6 +19,7 @@ public class Administrator {
 		System.out.println("Nume: " + nume);
 		System.out.println("Client: ");
 		client.afisare();
+		System.out.println("");
 	}
 
 	public void preluareClient(Client c) {
