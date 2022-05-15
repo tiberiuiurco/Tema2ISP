@@ -11,6 +11,7 @@ public class Administrator {
 	
 	public Administrator(String nume, Client client){
 		this.nume = nume;
+		this.client = new Client();
 		this.client = client;
 	}
 
@@ -24,14 +25,13 @@ public class Administrator {
 		this.client = c;
 	}
 
-	public void creazaComanda() {
-		
-		
+	public void creazaComanda(int distanta, int greutate, int volum, int pret, Valuta valuta, boolean livrata, Client expeditor, Persoana destinatar, boolean platita) {
+		Comanda comanda = new Comanda(distanta, greutate, volum, pret, valuta, livrata, expeditor, destinatar, platita);
+		if(client != null) {
+			client.primesteComanda(comanda);
+		}		
 	}
-
-	public void calculareDistanta() {
-	}
-
-	public void calculareTaxe() {
+	public void verificaDisponibilitateCurier(Curier curier){
+		return curier.esteDisponibil();
 	}
 };
