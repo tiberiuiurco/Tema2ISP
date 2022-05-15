@@ -12,7 +12,7 @@ public class Curier {
 	
 	public Curier(String nume, Comanda comanda, boolean disponibil) {
 		this.nume = nume;
-		this.comanda = comanda;
+		this.comanda = null;
 		this.disponibil = disponibil;
 	}
 
@@ -27,6 +27,7 @@ public class Curier {
 	}
 	
 	public void primesteComanda(Comanda comanda) {
+		this.comanda = new Comanda();
 		this.comanda = comanda;
 	}
 	

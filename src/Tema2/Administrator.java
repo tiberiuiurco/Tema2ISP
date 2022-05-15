@@ -34,4 +34,5 @@ public class Administrator {
 	public boolean verificaDisponibilitateCurier(Curier curier){
 		return curier.esteDisponibil();
 	}
+	
 };
