@@ -8,14 +8,40 @@ public class Locatie {
 
 	private String tara;
 	
-	private String judet;
-	
 	private String localitate;
 	
 	private String strada;
 	
 	private String numar;
-
+	
+	public Locatie ()
+	{
+		tara = null;
+		localitate = null;
+		strada = null;
+		numar = null;
+	}
+	
+	public Locatie(String tara, String localitate, String strada, String numar)
+	{
+		this.tara = tara;
+		this.localitate = localitate;
+		this.strada = strada;
+		this.numar = numar;
+	}
+	
 	public void afisare() {
+		System.out.println("Locatia se afla in tara " + this.tara + " localitatea " + this.localitate
+							 + " strada " + this.strada + " numarul " + this.numar
+							);
+	}
+	
+	public String getTara()
+	{
+		return this.tara;
+	}
+	public String getLocaliate()
+	{
+		return this.localitate;
 	}
 };

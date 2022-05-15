@@ -6,11 +6,36 @@ package Tema2;
 
 public class Persoana {
 	
+<<<<<<< HEAD
 	private String locatie;
+=======
+	private Locatie locatie;
+	
+>>>>>>> 1cdeca2062e9de952560faa13bfaa57f4c5f1828
 	private String nume;
 	private String contact;
+	
+	public Persoana()
+	{
+		this.locatie = null;
+		this.nume = null;
+		this.contact = null;
+	}
+	
+	public Persoana (Locatie locatie, String nume, String contact)
+	{
+		this.locatie = new Locatie();
+		this.locatie = locatie;
+		this.nume = nume;
+		this.contact = contact;
+	}
 
 	public void afisare() {
+<<<<<<< HEAD
 		
+=======
+		System.out.println("Nume: " + this.nume + " contact " + this.contact);
+		this.locatie.afisare();
+>>>>>>> 1cdeca2062e9de952560faa13bfaa57f4c5f1828
 	}
 };
