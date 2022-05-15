@@ -31,7 +31,7 @@ public class Administrator {
 			client.primesteComanda(comanda);
 		}		
 	}
-	public void verificaDisponibilitateCurier(Curier curier){
+	public boolean verificaDisponibilitateCurier(Curier curier){
 		return curier.esteDisponibil();
 	}
 };

@@ -7,9 +7,7 @@ package Tema2;
 public class Persoana {
 	
 	private Locatie locatie;
-	
 	private String nume;
-	
 	private String contact;
 	
 	public Persoana()
@@ -28,7 +26,9 @@ public class Persoana {
 	}
 
 	public void afisare() {
+
 		System.out.println("Nume: " + this.nume + " contact " + this.contact);
 		this.locatie.afisare();
+
 	}
 };
