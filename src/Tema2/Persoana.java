@@ -36,4 +36,14 @@ public class Persoana {
 	{
 		return this.locatie;
 	}
+	
+	public static boolean verificareDate(Locatie locatie, String nume, String contact) {
+		boolean isOk = false;
+		for(int i = 0; i < contact.length(); i++) {
+			if(contact.contains("@gmail.com")) {
+				isOk = true;
+			}
+		}
+		return isOk;
+	}
 };
