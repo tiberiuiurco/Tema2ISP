@@ -26,14 +26,18 @@ public class Administrator {
 		this.client = c;
 	}
 
-	public void creazaComanda(int distanta, int greutate, int volum, int pret, Valuta valuta, boolean livrata, Persoana destinatar, boolean platita) {
-		Comanda comanda = new Comanda(distanta, greutate, volum, pret, valuta, livrata, this.client, destinatar, platita);
+	public void creazaComanda(int distanta, int greutate, int volum, int pret, Valuta valuta, boolean livrata, Client client, Persoana destinatar, boolean platita) {
+		Comanda comanda = new Comanda(distanta, greutate, volum, pret, valuta, livrata, client, destinatar, platita);
 		if(client != null) {
 			client.primesteComanda(comanda);
 		}		
 	}
 	public boolean verificaDisponibilitateCurier(Curier curier){
 		return curier.esteDisponibil();
+	}
+	
+	public Client getClient() {
+		return this.client;
 	}
 	
 };

@@ -4,52 +4,46 @@ import java.util.ArrayList;
 public class testIoana {
 	public static void main(String[] args)
 	{
-		Locatie l1 = new Locatie("Bulgaria", "Ploiesti", "Bobilna", "85");
-		l1.afisare();
-		System.out.println("");
+		//adminul
+		Administrator admin = new Administrator("admin");
+		
+		Locatie l1 = new Locatie("Romania", "Ploiesti", "Bobilna", "85");
+		Locatie l2 = new Locatie("Bulgaria", "Varna", "Bobilna", "85");
+		//l1.afisare();
 		
 		//destinatarul
-		Persoana p1 = new Persoana(l1,"Alex", "gmail");
-		p1.afisare();
+		Persoana p1 = new Persoana(l1,"Alex", "alex@gmail");
+		//p1.afisare();
 		
-		Comanda c0 = new Comanda();
+		//expeditorul
+		Client client = new Client(l2, "Anca Marin", "anca@gmail.com");
 		
+		//lista de curieri
 		ArrayList<Curier> curieri = new ArrayList<Curier>();
-		curieri.add(new Curier("Gigel Marin", c0, true));
-		curieri.add(new Curier("Vasile Munteanu", c0, true));
-		curieri.add(new Curier("Dan Damian", c0, true));
-		curieri.add(new Curier("Georgeta Saru", c0, true));
-		curieri.add(new Curier("Fabian Andreescu", c0, true));
-		
-		Client client = new Client(l1, "Anca Marin", "anca@gmail.com");
-		
-		Administrator admin = new Administrator("admin");
-		admin.preluareClient(client);
-		
-		admin.creazaComanda(2000, 3, 5, 0, Valuta.Ron, false, p1, false);
-		
-		/*private int distanta;
-		private int greutate;
-		private int volum;
-		private int pret;
-		private Valuta valuta;
-		private boolean livrata;
-		private Persoana destinatar;
-		private boolean platita;
-		*/
-		
-		//afisare curieri 
-		for (int i = 0; i < curieri.size(); i ++)
-			curieri.get(i).afisare();
-		
+		curieri.add(new Curier("Gigel Marin", true));
+		curieri.add(new Curier("Vasile Munteanu", true));
+		curieri.add(new Curier("Dan Damian", true));
+		curieri.add(new Curier("Georgeta Saru", true));
+		curieri.add(new Curier("Fabian Andreescu", true));
+
+		//operatii facute de admin
+		admin.preluareClient(client);	//ia datele de la client
+		admin.creazaComanda(2000, 3, 5, 0, Valuta.Ron, false, client, p1, false);	//si creaza comanda
+
 		//cautare curieri
-		for (int i = 0; i < curieri.size(); i ++)
+		for (int i = 0; i < curieri.size(); i ++) {
 			if (curieri.get(i).esteDisponibil()) {
-				curieri.get(i).primesteComanda(client.getComanda());
+				curieri.get(i).primesteComanda(admin.getClient().getComanda());
 				break;
 			}
+		}
 		
-		for (int i = 0; i < curieri.size(); i ++)
+		//afisare curieri
+		for (int i = 0; i < curieri.size(); i ++) {
 			curieri.get(i).afisare();
+			System.out.println("");
+			System.out.println("");
+		}
+			
 	}
 }

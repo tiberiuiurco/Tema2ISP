@@ -19,10 +19,6 @@ public class Client extends Persoana{
 	}
 	
 	public void afisare() {
-		System.out.println("Comanda:");
-		comanda.afisare();
-		System.out.println("Date client: ");
-		System.out.println("");
 		super.afisare();
 		System.out.println("");
 	}

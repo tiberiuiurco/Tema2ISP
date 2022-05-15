@@ -10,22 +10,25 @@ public class Curier {
 	private Comanda comanda;
 	private boolean disponibil;
 	
-	public Curier(String nume, Comanda comanda, boolean disponibil) {
+	public Curier(String nume, boolean disponibil) {
 		this.nume = nume;
 		this.comanda = null;
 		this.disponibil = disponibil;
 	}
 
 	public void afisare() {
+		System.out.println("CURIERUL");
 		System.out.println("Nume: " + nume);
-		System.out.println("Comanda: ");
-		if (this.comanda != null)
-			this.comanda.afisare();
 		if (disponibil)
 			System.out.println("Disponibil: DA");
 		else
 			System.out.println("Disponibil: NU");
-		System.out.println("");
+		
+		if (this.comanda != null) {
+			System.out.println("ARE COMANDA");
+			this.comanda.afisare();
+		}
+		else System.out.println("NU ARE COMANDA");
 	}
 	
 	public void marcheazaLivrat() {

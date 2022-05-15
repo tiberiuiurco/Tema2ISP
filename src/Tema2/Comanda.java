@@ -43,14 +43,17 @@ public class Comanda {
 		else 
 			System.out.println("Livrata: NU");
 		
-		expeditor.afisare();
-		destinatar.afisare();
-		
 		if (platita)
 			System.out.println("Platita: DA");
 		else 
 			System.out.println("Platita: NU");
 		System.out.println("");
+		//e un client
+		System.out.println("EXPEDITOR");
+		expeditor.afisare();
+		//o persoana
+		System.out.println("DESTINATAR");
+		destinatar.afisare();
 	}
 	
 	public float calcularePret() {
