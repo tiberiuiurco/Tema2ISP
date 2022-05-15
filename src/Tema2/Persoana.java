@@ -31,4 +31,9 @@ public class Persoana {
 		this.locatie.afisare();
 
 	}
+	
+	public Locatie transmiteLocatie()
+	{
+		return this.locatie;
+	}
 };
