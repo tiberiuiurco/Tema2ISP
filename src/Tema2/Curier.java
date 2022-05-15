@@ -16,13 +16,18 @@ public class Curier {
 		this.disponibil = disponibil;
 	}
 
-	public void marcheazaLivrat() {
-	}
-
 	public void afisare() {
 		System.out.println("Nume: " + nume);
 		System.out.println("Comanda: ");
-		comanda.afisare();
+		this.comanda.afisare();
+	}
+	
+	public void marcheazaLivrat() {
+		this.comanda.marcheazaLivrat();
+	}
+	
+	public void primesteComanda(Comanda comanda) {
+		this.comanda = comanda;
 	}
 	
 	public boolean esteDisponibil() {
