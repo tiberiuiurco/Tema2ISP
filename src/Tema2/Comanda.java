@@ -7,27 +7,29 @@ package Tema2;
 public class Comanda {
 	
 	private int distanta;
-	
 	private int greutate;
-	
 	private int volum;
-
 	private int pret;
-	
 	private Valuta valuta;
-	
-	private boolean livarata;
-	
+	private boolean livrata;
 	private Client expeditor;
-	
 	private Persoana destinatar;
+	private boolean platita;
 
+	public Comanda(int distanta, int greutate, int volum, int pret, Valuta valuta, boolean livrata, Client expeditor, Persoana destinatar, boolean platita) {
+		this.distanta = distanta;
+		this.greutate = greutate;
+		this.volum = volum;
+		this.valuta = valuta;
+		this.livrata = livrata;
+		this.expeditor = expeditor;
+		this.destinatar = destinatar;
+		this.platita = platita;
+	}
 	public void calcularePret() {
 	}
-
 	public void conversieValutara() {
 	}
-
 	public void afisare() {
 	}
 };

@@ -7,9 +7,10 @@ package Tema2;
 public class Client extends Persoana{
 	
 	private Comanda comanda;
-	
-	public Persoana persoana;
-
+	public Client(Comanda comanda, Locatie locatie, String nume, String contact) {
+		super(locatie, nume, contact);
+		this.comanda = comanda;
+	}
 	public void afisare() {
 	}
 
