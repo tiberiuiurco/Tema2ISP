@@ -4,6 +4,8 @@
 
 package Tema2;
 
+import java.util.ArrayList;
+
 public class Comanda {
 	
 	private int distanta;
@@ -84,8 +86,63 @@ public class Comanda {
 		this.livrata = true;
 	}
 	
-	public int calculareDistanta() {
+	public int calculareDistanta(ArrayList<Locatie> listaOrase, int[][] harta, Persoana destinatar, Persoana expeditor) {
 		
+		int u;
+		int distanta = 0;
+		int INT_MAX = 999;
+		Locatie dest = destinatar.transmiteLocatie();
+		Locatie exp = expeditor.transmiteLocatie();
+		
+		int sursa  = listaOrase.indexOf(exp); // +1 in realitate
+		int destinatie = listaOrase.indexOf(dest);
+		
+		int[] dist = new int[listaOrase.size()];
+		int[] sps = new int[listaOrase.size()];
+		int[] pred = new int[listaOrase.size()];
+		
+		for (int i = 0; i  < listaOrase.size(); i++) {
+			dist[i] = INT_MAX;
+			sps[i] = 0;
+			pred[i] = -1;
+		}
+		
+		dist[sursa] = 0;
+		
+		for (int j = 0; j < listaOrase.size() - 1; j++) {
+			int v, min = INT_MAX, min_index = 0;
+			for (v = 0; v < listaOrase.size(); v++) {
+				if (sps[v] == 0 && dist[v] <= min) {
+					min = dist[v];
+					min_index = v;
+				}
+			}
+			u = min_index; // gasire nod cu distanta minima fata de sursa care nu e in sps
+			sps[u] = 1;
+			//pred [u] = sps[j];
+			
+			for (int i = 0; i < listaOrase.size(); i++){	//update distanta
+				if(sps[i] == 0 && harta[u][i] != 0 && dist[u] != INT_MAX && dist[u] + harta[u][i] < dist[i])
+				{
+					dist[i] = dist[u] + harta[u][i];
+					pred[i] = u;
+				}
+			}
+		}
+		
+		int aux = destinatie;
+		ArrayList<Integer> cale = new ArrayList<Integer>();
+		while (aux != sursa)
+		{
+			//System.out.print(listaOrase.get(aux).getLocaliate() + " -> ");
+			cale.add(aux);
+			aux = pred[aux];
+		}
+		cale.add(aux);
+		for (int i = cale.size() - 1; i >0; i--)
+			System.out.print(listaOrase.get(cale.get(i)).getLocaliate() + " -> ");
+		System.out.print(listaOrase.get(cale.get(0)).getLocaliate());
+		return dist[destinatie]*100; 
 	}
 	
 	public void marcheazaPlatita() {
