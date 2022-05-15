@@ -53,9 +53,11 @@ public class Comanda {
 		else 
 			System.out.println("Platita: NU");
 	}
+	
 	public void marcheazaPlatita() {
 		this.platita = true;
 	}
+	
 	public void marcheazaLivrat() {
 		this.livrata = true;
 	}
