@@ -35,6 +35,7 @@ public class Curier {
 	public void primesteComanda(Comanda comanda) {
 		this.comanda = new Comanda();
 		this.comanda = comanda;
+		this.disponibil = false;
 	}
 	
 	public boolean esteDisponibil() {

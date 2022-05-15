@@ -13,9 +13,9 @@ public class Client extends Persoana{
 		this.comanda = null;
 	}
 	
-	public Client(Comanda comanda, Locatie locatie, String nume, String contact) {
+	public Client(Locatie locatie, String nume, String contact) {
 		super(locatie, nume, contact);
-		this.comanda = comanda;
+		this.comanda = null;
 	}
 	
 	public void afisare() {
@@ -32,6 +32,11 @@ public class Client extends Persoana{
 	}
 	
 	public void primesteComanda(Comanda comanda) {
+		this.comanda = new Comanda();
 		this.comanda = comanda;
+	}
+	
+	public Comanda getComanda() {
+		return this.comanda;
 	}
 };
