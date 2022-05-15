@@ -6,7 +6,6 @@ package Tema2;
 
 public class Persoana {
 	
-	private String locatie;
 	private Locatie locatie;
 	private String nume;
 	private String contact;

@@ -26,8 +26,6 @@ public class Curier {
 	}
 	
 	public boolean esteDisponibil() {
-		if(disponibil)
-			return true;
-		else return false;
+		return disponibil;
 	}
 };

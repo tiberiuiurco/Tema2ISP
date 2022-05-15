@@ -9,8 +9,8 @@ public class Client extends Persoana{
 	private Comanda comanda;
 	
 	public Client() {
-		this.comanda = null;
 		super();
+		this.comanda = null;
 	}
 	
 	public Client(Comanda comanda, Locatie locatie, String nume, String contact) {
