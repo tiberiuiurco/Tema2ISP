@@ -7,12 +7,19 @@ package Tema2;
 public class Curier {
 
 	private String nume;
-
 	private Comanda comanda;
+	
+	public Curier(String nume, Comanda comanda) {
+		this.nume = nume;
+		this.comanda = comanda;
+	}
 
 	public void marcheazaLivrat() {
 	}
 
 	public void afisare() {
+		System.out.println("Nume: " + nume);
+		System.out.println("Comanda: ");
+		comanda.afisare();
 	}
 };

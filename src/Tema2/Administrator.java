@@ -7,16 +7,26 @@ package Tema2;
 public class Administrator {
 
 	private String nume;
-
 	private Client client;
-
-	public void afisare() {
+	
+	public Administrator(String nume, Client client){
+		this.nume = nume;
+		this.client = client;
 	}
 
-	public void preluareClient() {
+	public void afisare() {
+		System.out.println("Nume: " + nume);
+		System.out.println("Client: ");
+		client.afisare();
+	}
+
+	public void preluareClient(Client c) {
+		this.client = c;
 	}
 
 	public void creazaComanda() {
+		
+		
 	}
 
 	public void calculareDistanta() {
