@@ -7,13 +7,28 @@ package Tema2;
 public class Client extends Persoana{
 	
 	private Comanda comanda;
+	
+	public Client() {
+		this.comanda = null;
+		super();
+	}
+	
 	public Client(Comanda comanda, Locatie locatie, String nume, String contact) {
 		super(locatie, nume, contact);
 		this.comanda = comanda;
 	}
+	
 	public void afisare() {
+		System.out.println("Comanda:");
+		comanda.afisare();
+		System.out.println("Date client: ");
+		super.afisare();
 	}
 
 	public void plateste() {
+	}
+	
+	public void primesteComanda(Comanda comanda) {
+		this.comanda = comanda;
 	}
 };

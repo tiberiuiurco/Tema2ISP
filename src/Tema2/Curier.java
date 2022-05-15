@@ -8,10 +8,12 @@ public class Curier {
 
 	private String nume;
 	private Comanda comanda;
+	private boolean disponibil;
 	
-	public Curier(String nume, Comanda comanda) {
+	public Curier(String nume, Comanda comanda, boolean disponibil) {
 		this.nume = nume;
 		this.comanda = comanda;
+		this.disponibil = disponibil;
 	}
 
 	public void marcheazaLivrat() {
@@ -21,5 +23,11 @@ public class Curier {
 		System.out.println("Nume: " + nume);
 		System.out.println("Comanda: ");
 		comanda.afisare();
+	}
+	
+	public boolean esteDisponibl() {
+		if(disponibil)
+			return true;
+		else return false;
 	}
 };

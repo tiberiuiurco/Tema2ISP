@@ -7,11 +7,10 @@ package Tema2;
 public class Persoana {
 	
 	private String locatie;
-	
 	private String nume;
-	
 	private String contact;
 
 	public void afisare() {
+		
 	}
 };

@@ -26,10 +26,31 @@ public class Comanda {
 		this.destinatar = destinatar;
 		this.platita = platita;
 	}
+	
 	public void calcularePret() {
 	}
+	
 	public void conversieValutara() {
 	}
+	
 	public void afisare() {
+		System.out.println("Distanta: " + distanta);
+		System.out.println("Greutate: " + greutate);
+		System.out.println("Volum: " + volum);
+		System.out.println("Pret: " + pret);
+		System.out.println("Valuta: " + valuta);
+		
+		if (livrata)
+			System.out.println("Livrata: DA");
+		else 
+			System.out.println("Livrata: NU");
+		
+		expeditor.afisare();
+		destinatar.afisare();
+		
+		if (platita)
+			System.out.println("Platita: DA");
+		else 
+			System.out.println("Platita: NU");
 	}
 };
