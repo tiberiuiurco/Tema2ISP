@@ -27,12 +27,6 @@ public class Comanda {
 		this.platita = platita;
 	}
 	
-	public void calcularePret() {
-	}
-	
-	public void conversieValutara() {
-	}
-	
 	public void afisare() {
 		System.out.println("Distanta: " + distanta);
 		System.out.println("Greutate: " + greutate);
@@ -54,11 +48,58 @@ public class Comanda {
 			System.out.println("Platita: NU");
 	}
 	
-	public void marcheazaPlatita() {
-		this.platita = true;
+	public float calcularePret() {
+		float pret_per_kg = 0.3f;
+		float pret_per_km = 0.3f;
+		float pret_per_m3 = 200.0f;
+		return conversieValutara(pret_per_kg*greutate+pret_per_km*distanta+pret_per_m3*volum);
+	}
+	
+	public float conversieValutara(float pretInLei) {
+		switch(this.valuta) {
+		case Euro:
+			return pretInLei*0.202f;
+		case Rubla:
+			return pretInLei*13.634f;
+		case Ron:
+			return pretInLei;
+		case FrancElvetian:
+			return pretInLei*0.211f;
+		case Lira:
+			return pretInLei*0.171f;
+		default:
+			return pretInLei;
+		}
 	}
 	
 	public void marcheazaLivrat() {
 		this.livrata = true;
+	}
+	
+	public int calculareDistanta() {
+		
+	}
+	
+	public void marcheazaPlatita() {
+		this.platita = true;
+	}
+	
+
+	
+	public float calculareTaxe() {
+		switch(this.valuta) {
+		case Euro:
+			return 1.11f;
+		case Rubla:
+			return 1.20f;
+		case Ron:
+			return 1f;
+		case FrancElvetian:
+			return 1.15f;
+		case Lira:
+			return 1.25f;
+		default:
+			return 1f;
+		}
 	}
 };
