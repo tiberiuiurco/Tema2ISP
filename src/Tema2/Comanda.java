@@ -105,4 +105,8 @@ public class Comanda {
 			return 1f;
 		}
 	}
+	
+	public boolean verificaPlatita(){
+		return platita;
+	}
 };
