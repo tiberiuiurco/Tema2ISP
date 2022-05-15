@@ -25,7 +25,7 @@ public class Curier {
 		comanda.afisare();
 	}
 	
-	public boolean esteDisponibl() {
+	public boolean esteDisponibil() {
 		if(disponibil)
 			return true;
 		else return false;
