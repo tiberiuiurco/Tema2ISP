@@ -4,6 +4,8 @@
 
 package Tema2;
 
+import java.util.ArrayList;
+
 public class Persoana {
 	
 	private Locatie locatie;
@@ -40,11 +42,19 @@ public class Persoana {
 	}
 	
 	public static boolean verificareDate(Locatie locatie, String nume, String contact) {
+		// Lista de tari permise
+		ArrayList<String> listaTari = new ArrayList<String>();
+		listaTari.add("Romania");
+		listaTari.add("Spania");
+		listaTari.add("Regatul Unit");
+		listaTari.add("Italia");
+		listaTari.add("Rusia");
+		listaTari.add("Elvetia");
+		listaTari.add("Austria");
+		
 		boolean isOk = false;
-		for(int i = 0; i < contact.length(); i++) {
-			if(contact.contains("@gmail.com")) {
-				isOk = true;
-			}
+		if(contact.contains("@gmail.com") && listaTari.contains(locatie.getTara())) {
+			isOk = true;
 		}
 		return isOk;
 	}

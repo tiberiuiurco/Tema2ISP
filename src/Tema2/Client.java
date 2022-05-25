@@ -7,10 +7,12 @@ package Tema2;
 public class Client extends Persoana{
 	
 	private Comanda comanda;
+	private boolean platita;
 	
 	public Client() {
 		super();
 		this.comanda = null;
+		this.platita = false;
 	}
 	
 	public Client(Locatie locatie, String nume, String contact) {
@@ -23,8 +25,10 @@ public class Client extends Persoana{
 		System.out.println("");
 	}
 
-	public void plateste() {
+	public boolean plateste() {
 		this.comanda.marcheazaPlatita();
+		this.platita = true;
+		return true;
 	}
 	
 	public void primesteComanda(Comanda comanda) {
@@ -34,5 +38,9 @@ public class Client extends Persoana{
 	
 	public Comanda getComanda() {
 		return this.comanda;
+	}
+	
+	public boolean verificaPlatita(){
+		return platita;
 	}
 };

@@ -11,7 +11,7 @@ public class Comanda {
 	private int distanta;
 	private int greutate;
 	private int volum;
-	private int pret;
+	private float pret;
 	private Valuta valuta;
 	private boolean livrata;
 	private Client expeditor;
@@ -62,6 +62,7 @@ public class Comanda {
 		float pret_per_kg = 0.3f;
 		float pret_per_km = 0.3f;
 		float pret_per_m3 = 200.0f;
+		this.pret = conversieValutara(pret_per_kg*greutate+pret_per_km*distanta+pret_per_m3*volum);
 		return conversieValutara(pret_per_kg*greutate+pret_per_km*distanta+pret_per_m3*volum);
 	}
 	
