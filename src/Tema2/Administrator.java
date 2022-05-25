@@ -25,7 +25,7 @@ public class Administrator {
 		this.client = new Client();
 		this.client = c;
 	}
-
+	//distanta initial e 0, nu ar trebui neaparat apelata in constructor
 	public void creazaComanda(int distanta, int greutate, int volum, int pret, Valuta valuta, boolean livrata, Client client, Persoana destinatar, boolean platita) {
 		Comanda comanda = new Comanda(distanta, greutate, volum, pret, valuta, livrata, client, destinatar, platita);
 		if(client != null) {

@@ -31,7 +31,7 @@ public class testAlex {
 		p1.afisare();
 		
 		Administrator admin1 = new Administrator("admin");
-		Client c1 = new Client(l4, "Ion Ion", "japierdol@gmai.com");
+		Client c1 = new Client(l1, "Ion Ion", "japierdol@gmai.com");
 		admin1.preluareClient(c1);	//ia datele de la client
 		admin1.creazaComanda(2000, 3, 5, 0, Valuta.Ron, false, c1, p1, false);
 		

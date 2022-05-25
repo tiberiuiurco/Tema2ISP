@@ -142,6 +142,7 @@ public class Comanda {
 		for (int i = cale.size() - 1; i >0; i--)
 			System.out.print(listaOrase.get(cale.get(i)).getLocaliate() + " -> ");
 		System.out.print(listaOrase.get(cale.get(0)).getLocaliate());
+		distanta = dist[destinatie]*100;
 		return dist[destinatie]*100; 
 	}
 	
